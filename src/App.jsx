@@ -1,9 +1,24 @@
 import "./App.css";
+import { AddItem } from "./components/AddItem";
 
 function App() {
   return (
     <>
-      <h1>Todo App</h1>
+      <AddItem />
+      <div>
+        <h3>TO DO</h3>
+        <div>
+          <div>Checkbox</div>
+          <span>Tarea</span>
+        </div>
+      </div>
+      <div>
+        <h3>Tareas completadas</h3>
+        <div>
+          <div>Checkbox</div>
+          <span>Tarea</span>
+        </div>
+      </div>
     </>
   );
 }
