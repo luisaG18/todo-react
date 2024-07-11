@@ -2,8 +2,8 @@ import "./AddItem.scss";
 
 export function AddItem({ handleAddItem }) {
   const handleClick = () => {
-    const inputValue = document.getElementById("input-item").value;
-    handleAddItem(inputValue);
+    const newValue = document.getElementById("input-item").value;
+    handleAddItem(newValue);
     document.getElementById("input-item").value = "";
   };
 
