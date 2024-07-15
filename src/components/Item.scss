@@ -13,3 +13,15 @@
     cursor: pointer;
   }
 }
+
+.container-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  &__icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
