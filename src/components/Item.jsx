@@ -18,7 +18,7 @@ export function Item({ item, handleItemChecked, checked }) {
         type="checkbox"
         className="container-item__checkbox"
         id="item-checkbox"
-        onClick={handleClick}
+        onChange={handleClick}
         checked={checked}
         readOnly={checked}
       />
