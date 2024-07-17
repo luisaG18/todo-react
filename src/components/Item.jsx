@@ -1,15 +1,21 @@
 import { useState } from "react";
 import "./Item.scss";
+import { OptionsItem } from "./Options";
 
 export function Item({ item, handleItemChecked, checked }) {
   const [check, setCheck] = useState(false);
+  const [options, setOptions] = useState(false);
 
-  const handleClick = (event) => {
+  const handleChange = (event) => {
     const newCheck = event.target.checked;
     setCheck(newCheck);
     if (newCheck) {
       handleItemChecked(item);
     }
+  };
+
+  const handleClick = () => {
+    setOptions(true);
   };
 
   return (
@@ -18,7 +24,7 @@ export function Item({ item, handleItemChecked, checked }) {
         type="checkbox"
         className="container-item__checkbox"
         id="item-checkbox"
-        onChange={handleClick}
+        onChange={handleChange}
         checked={checked}
         readOnly={checked}
       />
@@ -30,7 +36,7 @@ export function Item({ item, handleItemChecked, checked }) {
             <del>{item}</del>
           </span>
         )}
-        <div className="container-items__icon">
+        <div className="container-items__icon" onClick={handleClick}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -48,6 +54,7 @@ export function Item({ item, handleItemChecked, checked }) {
             />
           </svg>
         </div>
+        {options && <OptionsItem />}
       </div>
     </div>
   );
